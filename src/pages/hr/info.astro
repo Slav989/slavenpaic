@@ -1,0 +1,554 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Info — Slaven Paić" activePage="info">
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- MAIN 3-COLUMN LAYOUT -->
+    <main class="portfolio-grid">
+        <section class="col col-left animate-fade delay-2">
+            <div>
+                <h1 class="hero-title">Više o<br>meni.</h1>
+                <div class="profile-photo-wrapper">
+                    <img src="/sp.jpg" alt="Slaven Paić">
+                </div>
+            </div>
+
+            <div class="socials-list">
+                <a href="https://www.facebook.com/slavenpaic/" target="_blank" class="social-icon" aria-label="Facebook">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/sp_studio_design/" target="_blank" class="social-icon" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/slaven-pai%C4%87-45350a249/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <section class="col col-middle animate-fade delay-3">
+            <div class="bio-section">
+                <p class="bio-statement">
+                    Ja sam Slaven — digitalni dizajner i developer iz Hrvatske <span class="muted">— stvaram minimalne web platforme visoke performanse i sustave vizualnog identiteta osmišljene da pretvaraju posjetitelje u klijente.</span>
+                </p>
+
+                <p class="bio-process">
+                    Svaki projekt gradim s jasnom namjerom: da izgleda vrhunski, visoko se pozicionira kroz čist tehnički SEO i pretvara kvalitetne posjetitelje u upite. Radeći izravno od strategije do produkcije, kombiniram visokokontrastne mreže i brzi front-end kako bi vaša digitalna prisutnost radila maksimalno za vas.
+                </p>
+            </div>
+
+            <div class="content-block">
+                <h2 class="block-title">Usluge</h2>
+                <div class="services-stack">
+                    <div class="service-card">
+                        <div class="service-text">
+                            <div class="service-num-title">1. Vizualni identitet i sustavi</div>
+                            <p class="service-desc">Izrada jasnih, fleksibilnih sustava vizualnog identiteta i smjernica brenda koji osiguravaju autoritet na tržištu i daju vašem poslovanju jasan, premium smjer.</p>
+                        </div>
+                        <div class="service-img">
+                            <img src="/ami-large.jpg" alt="Vizualni identitet">
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-text">
+                            <div class="service-num-title">2. Web dizajn, SEO i kod po mjeri</div>
+                            <p class="service-desc">Dizajn i izrada brzih, responzivnih web stranica optimiziranih za tehnički SEO, besprijekorne performanse i visoku stopu konverzije klijenata.</p>
+                        </div>
+                        <div class="service-img">
+                            <img src="/drew-griffiths.avif" alt="Web dizajn">
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-text">
+                            <div class="service-num-title">3. Urednički prijelom i priprema za tisak</div>
+                            <p class="service-desc">Oblikovanje visokokontrastnih uredničkih struktura, digitalnih publikacija i tiskanih materijala uz točnu vizualnu hijerarhiju i preciznu pripremu za tisak.</p>
+                        </div>
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800&auto=format&fit=crop" alt="Urednički prijelom">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-block" style="margin-bottom: 0;">
+                <h2 class="block-title">Česta pitanja</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-header">
+                            <span>Koje usluge nudite?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-body">
+                            Specijaliziran sam za web dizajn usmjeren na konverzije, prilagođeni front-end razvoj, tehničku SEO arhitekturu, sustave vizualnog identiteta i urednički prijelom.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-header">
+                            <span>Radite li s međunarodnim klijentima?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-body">
+                            Da — radim s klijentima diljem svijeta, vodeći komunikaciju na daljinu i jednostavno se prilagođavajući različitim vremenskim zonama.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-header">
+                            <span>Kako započinje novi projekt?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-body">
+                            Započinjemo kratkim uvodnim pozivom kako bismo definirali vaše poslovne ciljeve i SEO strategiju. Nakon toga pripremam izravan prijedlog s jasnim opsegom, isporukama i vremenskim okvirom.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-header">
+                            <span>Koji je uobičajeni vremenski okvir za projekt?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-body">
+                            Vremenski okviri ovise o složenosti. Izrada web stranice po mjeri, SEO postavke i produkcija obično traju između 3 i 6 tjedana od početka do lansiranja.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="col col-right animate-fade delay-4">
+            <div>
+                <div class="availability-tag">
+                    <span class="dot"></span>
+                    <span>Dostupan za projekte</span>
+                </div>
+
+                <div class="stats-summary">
+                    <div class="stat-row">
+                        <span class="muted">Iskustvo</span>
+                        <span>7+ godina</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="muted">Specijalnost</span>
+                        <span>Prilagođeni Web & SEO</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="muted">Studio</span>
+                        <a href="https://sp-studio.design/" target="_blank" class="studio-brand-link link-underline">SP Studio®Design ↗</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-box" id="contact">
+                <a href="mailto:slaven@sp-studio.design" class="contact-link link-underline">slaven@sp-studio.design</a>
+                <div class="contact-bottom-row">
+                    <a href="tel:+385915072862" class="contact-link link-underline">+(385) 91 507 2862</a>
+                    <span class="copyright">© <span id="year">2026</span></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear().toString();
+
+        const faqHeaders = document.querySelectorAll('.faq-header');
+        faqHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isOpen = item?.classList.contains('is-open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('is-open'));
+                if (!isOpen) { item?.classList.add('is-open'); }
+            });
+        });
+    </script>
+</Layout>
+
+<style is:global>
+    @font-face {
+        font-family: 'General Sans';
+        src: url('/fonts/GeneralSans-Medium.woff2') format('woff2');
+        font-weight: 400 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'General Sans';
+        src: url('/fonts/GeneralSans-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    :root {
+        --bg-color: #FFFFFF;
+        --text-main: #121212;
+        --text-muted: #757575;
+        --border-color: #E5E5E5;
+        --card-bg: #F4F4F4;
+        --font-main: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        --scrollbar-bg: #F5F5F5;
+        --scrollbar-thumb: #E63946;
+    }
+
+    [data-theme="dark"] {
+        --bg-color: #0D0D0D;
+        --text-main: #F0F0F0;
+        --text-muted: #888888;
+        --border-color: #242424;
+        --card-bg: #161616;
+        --scrollbar-bg: #121212;
+        --scrollbar-thumb: #FF4D4D;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--scrollbar-bg); }
+    ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 0; }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        font-family: var(--font-main);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.4;
+        width: 100%;
+        cursor: default;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a, button {
+        color: inherit;
+        text-decoration: none !important;
+        border: none !important;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .link-underline {
+        position: relative;
+        display: inline-block;
+        width: fit-content;
+        text-decoration: none !important;
+        border: none !important;
+    }
+
+    .link-underline::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: -1px;
+        left: 0;
+        background-color: var(--text-main);
+        transform: scaleX(0);
+        transform-origin: bottom left;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .link-underline:hover::after { transform: scaleX(1); }
+
+    .custom-cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 12px;
+        height: 12px;
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        mix-blend-mode: difference;
+        transform: translate(-50%, -50%);
+        will-change: transform, width, height;
+        transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1), height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(18px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade {
+        opacity: 0;
+        animation: fadeInUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .delay-1 { animation-delay: 0.05s; }
+    .delay-2 { animation-delay: 0.15s; }
+    .delay-3 { animation-delay: 0.25s; }
+    .delay-4 { animation-delay: 0.35s; }
+
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: 360px 1fr 360px;
+        align-items: start;
+        width: 100%;
+        min-height: calc(100vh - 45px);
+    }
+
+    .col { padding: 2.5rem 2rem; }
+
+    .col-left {
+        border-right: 1px solid var(--border-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: sticky;
+        top: 45px;
+        height: calc(100vh - 45px);
+    }
+
+    .hero-title {
+        font-size: 3.2rem;
+        font-weight: 500;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        margin-bottom: 2rem;
+    }
+
+    .profile-photo-wrapper {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        overflow: hidden;
+        background-color: var(--card-bg);
+        margin-bottom: 2rem;
+    }
+
+    .profile-photo-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .socials-list { display: flex; gap: 1.2rem; margin-top: auto; }
+
+    .social-icon {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .social-icon:hover { transform: translateY(-2px); color: var(--text-muted); }
+
+    .col-middle {
+        border-right: 1px solid var(--border-color);
+        padding: 2.5rem 2rem;
+        width: 100%;
+    }
+
+    .bio-section {
+        margin-bottom: 7rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+    }
+
+    .bio-statement {
+        font-size: 1.35rem;
+        font-weight: 500;
+        line-height: 1.35;
+        letter-spacing: -0.02em;
+        color: var(--text-main);
+    }
+
+    .bio-statement .muted { color: var(--text-muted); }
+
+    .bio-process {
+        font-size: 1rem;
+        font-weight: 500 !important;
+        line-height: 1.65;
+        color: var(--text-muted);
+        max-width: 95%;
+    }
+
+    .content-block { margin-bottom: 4.5rem; }
+
+    .block-title {
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.5rem;
+    }
+
+    .services-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .service-card {
+        display: grid;
+        grid-template-columns: 1fr 220px;
+        gap: 2rem;
+        align-items: center;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .service-card:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .service-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .service-num-title {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .service-desc {
+        font-size: 0.9rem;
+        font-weight: 500 !important;
+        color: var(--text-muted);
+        line-height: 1.5;
+    }
+
+    .service-img {
+        width: 100%;
+        height: 130px;
+        background-color: var(--card-bg);
+        overflow: hidden;
+    }
+
+    .service-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        display: block;
+    }
+
+    .faq-list { display: flex; flex-direction: column; }
+    .faq-item { border-bottom: 1px solid var(--border-color); }
+
+    .faq-header {
+        width: 100%;
+        padding: 1.2rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.05rem;
+        font-weight: 500;
+        text-align: left;
+        background: none;
+        color: var(--text-main);
+    }
+
+    .faq-icon { font-size: 1.2rem; transition: transform 0.3s ease; }
+    .faq-item.is-open .faq-icon { transform: rotate(45deg); }
+
+    .faq-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s ease;
+        color: var(--text-muted);
+        font-size: 0.92rem;
+        font-weight: 500 !important;
+        line-height: 1.5;
+        padding: 0 0;
+    }
+
+    .faq-item.is-open .faq-body {
+        max-height: 200px;
+        padding-bottom: 1.2rem;
+    }
+
+    .col-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: sticky;
+        top: 45px;
+        height: calc(100vh - 45px);
+    }
+
+    .availability-tag {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+
+    .dot { width: 6px; height: 6px; background-color: #22C55E; border-radius: 50%; }
+
+    .stats-summary {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .stat-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.88rem;
+        font-weight: 500 !important;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .stat-row span {
+        font-weight: 500 !important;
+        color: var(--text-main);
+    }
+
+    .stat-row .muted {
+        color: var(--text-muted) !important;
+        font-weight: 500 !important;
+    }
+
+    .contact-box {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        margin-top: auto;
+        width: 100%;
+    }
+
+    .contact-link { font-size: 0.88rem; font-weight: 500; display: block; }
+    .contact-bottom-row { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+    .copyright { font-size: 0.8rem; color: var(--text-muted); }
+
+    .studio-brand-link { color: var(--text-muted) !important; font-weight: 500 !important; }
+    .studio-brand-link:hover { color: var(--text-main) !important; }
+
+    @media (max-width: 1024px) {
+        .portfolio-grid { display: flex; flex-direction: column; }
+        .col-left { order: 1; position: relative; top: 0; height: auto; border-right: none; border-bottom: 1px solid var(--border-color); width: 100%; }
+        .col-right { order: 2; position: relative; top: 0; height: auto; border-right: none; border-bottom: 1px solid var(--border-color); width: 100%; }
+        .col-middle { order: 3; border-right: none; border-bottom: 1px solid var(--border-color); padding: 2.5rem 1.5rem; }
+        .bio-section { margin-bottom: 4.5rem; }
+        .service-card { grid-template-columns: 1fr; gap: 1rem; }
+        .service-img { height: 180px; }
+        .custom-cursor { display: none; }
+    }
+</style>

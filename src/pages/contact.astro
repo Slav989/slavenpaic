@@ -1,0 +1,435 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact — Slaven Paić">
+    <div class="custom-cursor" id="cursor"></div>
+
+
+    <main class="portfolio-grid">
+        <section class="col col-left animate-fade delay-2"></section>
+
+        <section class="col col-middle animate-fade delay-3">
+            <div class="contact-header">
+                <h1 class="contact-title">Reach out.</h1>
+                <p class="contact-subtext">
+                    I’d love to hear from you. Whether you’re looking to collaborate on a new project, discuss a commission, or simply say hello.
+                </p>
+            </div>
+
+            <div class="quick-contact-row">
+                <div class="quick-contact-info">
+                    <a href="mailto:slaven@sp-studio.design" class="quick-contact-link link-underline">slaven@sp-studio.design</a>
+                    <a href="tel:+385915072862" class="quick-contact-link link-underline">+(385) 91 507 2862</a>
+                </div>
+
+                <div class="quick-socials">
+                    <a href="https://www.facebook.com/slavenpaic/" target="_blank" class="social-icon" aria-label="Facebook">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/sp_studio_design/" target="_blank" class="social-icon" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/slaven-pai%C4%87-45350a249/" target="_blank" class="social-icon" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label class="form-label" for="name">Name*</label>
+                    <input type="text" id="name" name="name" required placeholder="John" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="email">Email*</label>
+                    <input type="email" id="email" name="email" required placeholder="contact@gmail.com" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (123) 456-7890" class="form-input">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="message">Message*</label>
+                    <textarea id="message" name="message" required placeholder="Project inquiry..." class="form-textarea"></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+        </section>
+
+        <section class="col col-right animate-fade delay-4"></section>
+    </main>
+
+    <script>
+        import Lenis from 'lenis';
+        const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
+        function raf(time: number) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        themeToggleBtn?.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            htmlElement.setAttribute('data-theme', newTheme);
+            const sunIcon = themeToggleBtn.querySelector('.sun-icon') as HTMLElement;
+            const moonIcon = themeToggleBtn.querySelector('.moon-icon') as HTMLElement;
+            if (sunIcon && moonIcon) {
+                if (newTheme === 'dark') { sunIcon.style.display = 'none'; moonIcon.style.display = 'block'; }
+                else { sunIcon.style.display = 'block'; moonIcon.style.display = 'none'; }
+            }
+        });
+
+        const cursor = document.getElementById('cursor');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let cursorVisible = false;
+
+        document.addEventListener('mousemove', (e) => { 
+            mouseX = e.clientX; 
+            mouseY = e.clientY; 
+            if (!cursorVisible && cursor) {
+                cursor.style.opacity = '1';
+                cursorVisible = true;
+            }
+        });
+
+        function renderCursor() {
+            cursorX += (mouseX - cursorX) * 0.28;
+            cursorY += (mouseY - cursorY) * 0.28;
+            if (cursor) {
+                cursor.style.left = cursorX + 'px';
+                cursor.style.top = cursorY + 'px';
+            }
+            requestAnimationFrame(renderCursor);
+        }
+        renderCursor();
+    </script>
+</Layout>
+
+<style is:global>
+    @font-face {
+        font-family: 'General Sans';
+        src: url('/fonts/GeneralSans-Medium.woff2') format('woff2');
+        font-weight: 400 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'General Sans';
+        src: url('/fonts/GeneralSans-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    :root {
+        --bg-color: #FFFFFF;
+        --text-main: #121212;
+        --text-muted: #757575;
+        --border-color: #E5E5E5;
+        --card-bg: #F4F4F4;
+        --font-main: 'General Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        --scrollbar-bg: #F5F5F5;
+        --scrollbar-thumb: #E63946;
+        --input-bg: transparent;
+    }
+
+    [data-theme="dark"] {
+        --bg-color: #0D0D0D;
+        --text-main: #F0F0F0;
+        --text-muted: #888888;
+        --border-color: #242424;
+        --card-bg: #161616;
+        --scrollbar-bg: #121212;
+        --scrollbar-thumb: #FF4D4D;
+        --input-bg: transparent;
+    }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--scrollbar-bg); }
+    ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 0; }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        font-family: var(--font-main);
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.4;
+        width: 100%;
+        cursor: default;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a, button, input, textarea {
+        color: inherit;
+        text-decoration: none !important;
+        border: none !important;
+        outline: none;
+    }
+
+    a, button { cursor: pointer; }
+
+    .link-underline {
+        position: relative;
+        display: inline-block;
+        width: fit-content;
+        text-decoration: none !important;
+        border: none !important;
+    }
+
+    .link-underline::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: -1px;
+        left: 0;
+        background-color: var(--text-main);
+        transform: scaleX(0);
+        transform-origin: bottom left;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .link-underline:hover::after { transform: scaleX(1); }
+
+    .custom-cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 12px;
+        height: 12px;
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        mix-blend-mode: difference;
+        transform: translate(-50%, -50%);
+        will-change: transform, left, top;
+        transition: opacity 0.2s ease;
+        opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(18px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade {
+        opacity: 0;
+        animation: fadeInUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .delay-1 { animation-delay: 0.05s; }
+    .delay-2 { animation-delay: 0.15s; }
+    .delay-3 { animation-delay: 0.25s; }
+    .delay-4 { animation-delay: 0.35s; }
+
+    .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--bg-color);
+        border-bottom: 1px solid var(--border-color);
+        display: grid;
+        grid-template-columns: 360px 1fr 360px;
+        align-items: center;
+        padding: 0.5rem 2rem;
+        width: 100%;
+        font-size: 0.88rem;
+        font-weight: 500;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .header-logo { display: flex; align-items: center; }
+
+    .header-logo-img {
+        height: 22px;
+        width: auto;
+        display: block;
+        transition: filter 0.3s ease;
+    }
+
+    [data-theme="dark"] .header-logo-img { filter: invert(1); }
+
+    .header-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        color: var(--text-muted);
+    }
+
+    .header-nav a:hover, .header-nav a.active { color: var(--text-main); }
+
+    .header-right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1.2rem;
+    }
+
+    .lang-switch {
+        display: inline-flex;
+        gap: 0.2rem;
+        color: var(--text-muted);
+        font-size: 0.82rem;
+        font-weight: 500;
+    }
+
+    .lang-switch span.active { color: var(--text-main); }
+
+    .theme-toggle-btn {
+        background: none;
+        border: 1px solid var(--border-color) !important;
+        color: var(--text-main);
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        padding: 0;
+    }
+
+    .theme-toggle-btn:hover { border-color: var(--text-main) !important; transform: scale(1.05); }
+
+    .portfolio-grid {
+        display: grid;
+        grid-template-columns: 360px 1fr 360px;
+        align-items: start;
+        width: 100%;
+        min-height: calc(100vh - 45px);
+    }
+
+    .col { padding: 2.5rem 2rem; }
+
+    .col-left {
+        border-right: 1px solid var(--border-color);
+        position: sticky;
+        top: 45px;
+        height: calc(100vh - 45px);
+    }
+
+    .col-middle {
+        border-right: 1px solid var(--border-color);
+        padding: 2.5rem 2rem 4rem 2rem;
+        width: 100%;
+    }
+
+    .col-right {
+        position: sticky;
+        top: 45px;
+        height: calc(100vh - 45px);
+    }
+
+    .contact-header { margin-bottom: 3rem; }
+
+    .contact-title {
+        font-size: 3.2rem;
+        font-weight: 500;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        margin-bottom: 1.2rem;
+    }
+
+    .contact-subtext {
+        font-size: 1.1rem;
+        font-weight: 500;
+        line-height: 1.4;
+        color: var(--text-muted);
+        max-width: 90%;
+    }
+
+    .quick-contact-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3.5rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--border-color);
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .quick-contact-info { display: flex; flex-direction: column; gap: 0.3rem; }
+    .quick-contact-link { font-size: 1rem; font-weight: 500; }
+    .quick-socials { display: flex; gap: 1rem; align-items: center; }
+
+    .social-icon {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .social-icon:hover { transform: translateY(-2px); color: var(--text-muted); }
+
+    .contact-form { display: flex; flex-direction: column; gap: 2rem; width: 100%; }
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; width: 100%; }
+
+    .form-label { font-size: 0.88rem; font-weight: 500; color: var(--text-main); }
+
+    .form-input, .form-textarea {
+        width: 100%;
+        background: var(--input-bg);
+        border: 1px solid var(--border-color) !important;
+        border-radius: 0 !important;
+        padding: 0.9rem 1rem;
+        font-family: var(--font-main);
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--text-main);
+        transition: border-color 0.2s ease;
+    }
+
+    .form-input::placeholder, .form-textarea::placeholder {
+        color: var(--text-muted);
+        opacity: 0.6;
+    }
+
+    .form-input:focus, .form-textarea:focus { border-color: var(--text-main) !important; }
+
+    .form-textarea { min-height: 140px; resize: vertical; }
+
+    .btn-submit {
+        align-self: flex-start;
+        background-color: var(--text-main);
+        color: var(--bg-color);
+        padding: 0.9rem 2.2rem;
+        border-radius: 0 !important;
+        font-family: var(--font-main);
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: opacity 0.2s ease;
+        cursor: pointer;
+    }
+
+    .btn-submit:hover { opacity: 0.85; }
+
+    @media (max-width: 1024px) {
+        .site-header { grid-template-columns: auto auto; padding: 0.8rem 1.5rem; }
+        .header-nav, .header-right { display: none; }
+        .portfolio-grid { display: flex; flex-direction: column; }
+        .col-left, .col-right { display: none; }
+        .col-middle { border-right: none; padding: 2.5rem 1.5rem; }
+        .contact-subtext { max-width: 100%; }
+        .custom-cursor { display: none; }
+    }
+</style>

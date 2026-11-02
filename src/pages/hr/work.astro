@@ -1,0 +1,283 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Radovi — Slaven Paić">
+    <div class="custom-cursor" id="cursor">
+        <span class="custom-cursor-text">Pogledaj rad</span>
+    </div>
+
+    <!-- MOBILE OVERLAY MENU -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <nav class="mobile-nav-links">
+            <a href="/hr">Početna,</a>
+            <a href="/hr/info">Info,</a>
+            <a href="/hr/work" class="active">Radovi,</a>
+            <a href="/hr/contact">Kontakt</a>
+        </nav>
+
+        <div class="mobile-menu-bottom">
+            <div class="mobile-controls-row">
+                <div class="lang-switch">
+                    <a href="/work">EN</a> / <span class="active">HR</span>
+                </div>
+                <button class="theme-toggle-btn theme-toggle-trigger" aria-label="Preklopi temu">
+                    <svg class="theme-icon sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle></svg>
+                    <svg class="theme-icon moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+            <a href="https://calendly.com/sp-studio/30-minute-discovery-call" target="_blank" rel="noopener" class="link-underline" style="align-self: flex-start; font-size: 1.1rem; font-weight: 500;">Rezerviraj poziv →</a>
+        </div>
+    </div>
+
+    <!-- MAIN WORK LAYOUT -->
+    <main class="work-layout animate-fade delay-2">
+        <aside class="work-sidebar">
+            <h1 class="work-title">Radovi.</h1>
+            <p class="work-description">
+                Odabir prilagođenih web arhitektura, vizualnih identiteta i uredničkih platformi izrađenih sa strateškom namjerom, visokim kontrastom i čistom front-end izvedbom.
+            </p>
+
+            <div class="category-filters">
+                <button class="filter-btn active" data-filter="web">Web dizajn i brending</button>
+                <button class="filter-btn" data-filter="book">Dizajn korica knjiga</button>
+            </div>
+        </aside>
+
+        <section class="work-content">
+            <div class="projects-2grid" id="projects-grid">
+                
+                <a href="https://dezman.hr" target="_blank" rel="noopener" class="project-card" data-category="web">
+                    <div class="project-media"><img src="/dezman.jpeg" alt="Dežman Bar"></div>
+                    <div class="project-meta">
+                        <div class="project-title-group"><span>Dežman Bar</span><span class="project-arrow">→</span><span class="project-category">Restoran / Bar</span></div>
+                        <span class="project-year">'26</span>
+                    </div>
+                </a>
+
+                <a href="https://drewgriffithsart.com" target="_blank" rel="noopener" class="project-card" data-category="web">
+                    <div class="project-media"><img src="/drew-griffiths.avif" alt="Drew Griffiths Art"></div>
+                    <div class="project-meta">
+                        <div class="project-title-group"><span>Drew Griffiths Art</span><span class="project-arrow">→</span><span class="project-category">Vizualni identitet & Portfolio</span></div>
+                        <span class="project-year">'26</span>
+                    </div>
+                </a>
+
+                <a href="https://tvrdja.com" target="_blank" rel="noopener" class="project-card" data-category="web">
+                    <div class="project-media"><img src="/tvrdja.avif" alt="Tvrđa"></div>
+                    <div class="project-meta">
+                        <div class="project-title-group"><span>Tvrđa</span><span class="project-arrow">→</span><span class="project-category">Kulturni časopis</span></div>
+                        <span class="project-year">'26</span>
+                    </div>
+                </a>
+
+                <a href="https://adriaticmotioninstitute.hr" target="_blank" rel="noopener" class="project-card" data-category="web">
+                    <div class="project-media"><img src="/ami.avif" alt="Adriatic Motion Institute"></div>
+                    <div class="project-meta">
+                        <div class="project-title-group"><span>Adriatic Motion Institute</span><span class="project-arrow">→</span><span class="project-category">Zdravstvena klinika</span></div>
+                        <span class="project-year">'26</span>
+                    </div>
+                </a>
+
+                <a href="https://nordvigplan.hr" target="_blank" rel="noopener" class="project-card" data-category="web">
+                    <div class="project-media"><img src="/nordvig.avif" alt="Nordvig Plan"></div>
+                    <div class="project-meta">
+                        <div class="project-title-group"><span>Nordvig Plan</span><span class="project-arrow">→</span><span class="project-category">Savjetovanje</span></div>
+                        <span class="project-year">'26</span>
+                    </div>
+                </a>
+
+                <a href="https://hamida-architects.com" target="_blank" rel="noopener" class="project-card" data-category="web">
+                    <div class="project-media"><img src="/hamida.avif" alt="Hamida Architects"></div>
+                    <div class="project-meta">
+                        <div class="project-title-group"><span>Hamida Architects</span><span class="project-arrow">→</span><span class="project-category">Arhitektonski studio</span></div>
+                        <span class="project-year">'26</span>
+                    </div>
+                </a>
+
+                <a href="https://ivanfijolic.net" target="_blank" rel="noopener" class="project-card" data-category="web">
+                    <div class="project-media"><img src="/fijolic.avif" alt="Ivan Fijolić"></div>
+                    <div class="project-meta">
+                        <div class="project-title-group"><span>Ivan Fijolić</span><span class="project-arrow">→</span><span class="project-category">Umjetnički portfolio & Vizualni identitet</span></div>
+                        <span class="project-year">'26</span>
+                    </div>
+                </a>
+
+                <a href="https://teomartino.it" target="_blank" rel="noopener" class="project-card" data-category="web">
+                    <div class="project-media"><img src="/teomartino.jpeg" alt="Teo Martino"></div>
+                    <div class="project-meta">
+                        <div class="project-title-group"><span>Teo Martino</span><span class="project-arrow">→</span><span class="project-category">Umjetnički portfolio</span></div>
+                        <span class="project-year">'26</span>
+                    </div>
+                </a>
+
+                <a href="https://kresimirkatusic.art" target="_blank" rel="noopener" class="project-card" data-category="web">
+                    <div class="project-media"><img src="/katusic.jpeg" alt="Krešimir Katušić"></div>
+                    <div class="project-meta">
+                        <div class="project-title-group"><span>Krešimir Katušić</span><span class="project-arrow">→</span><span class="project-category">Umjetnički portfolio</span></div>
+                        <span class="project-year">'26</span>
+                    </div>
+                </a>
+
+                <a href="https://jeanhartcommissionedart.co.uk/" target="_blank" rel="noopener" class="project-card" data-category="web">
+                    <div class="project-media"><img src="/jean-hart.jpeg" alt="Jean Hart Art"></div>
+                    <div class="project-meta">
+                        <div class="project-title-group"><span>Jean Hart Art</span><span class="project-arrow">→</span><span class="project-category">Umjetnički portfolio</span></div>
+                        <span class="project-year">'26</span>
+                    </div>
+                </a>
+
+                <a href="https://fortituderecruitment.com" target="_blank" rel="noopener" class="project-card" data-category="web">
+                    <div class="project-media"><img src="/fortitude.jpeg" alt="Fortitude Recruitment"></div>
+                    <div class="project-meta">
+                        <div class="project-title-group"><span>Fortitude Recruitment</span><span class="project-arrow">→</span><span class="project-category">Agencija za zapošljavanje</span></div>
+                        <span class="project-year">'26</span>
+                    </div>
+                </a>
+
+                <a href="https://theplagijators.com" target="_blank" rel="noopener" class="project-card" data-category="web">
+                    <div class="project-media"><img src="/plagijators.avif" alt="The Plagijators"></div>
+                    <div class="project-meta">
+                        <div class="project-title-group"><span>The Plagijators</span><span class="project-arrow">→</span><span class="project-category">Rock bend portfolio</span></div>
+                        <span class="project-year">'26</span>
+                    </div>
+                </a>
+
+                <div class="empty-notice" id="empty-notice">
+                    Još nema učitanih projekata dizajna korica knjiga.
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        import Lenis from 'lenis';
+        const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
+        function raf(time: number) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        // Theme Toggle
+        const themeTriggers = document.querySelectorAll('.theme-toggle-trigger');
+        const htmlElement = document.documentElement;
+
+        themeTriggers.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const currentTheme = htmlElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                htmlElement.setAttribute('data-theme', newTheme);
+                themeTriggers.forEach(tBtn => {
+                    const sun = tBtn.querySelector('.sun-icon') as HTMLElement;
+                    const moon = tBtn.querySelector('.moon-icon') as HTMLElement;
+                    if (newTheme === 'dark') { sun.style.display = 'none'; moon.style.display = 'block'; } 
+                    else { sun.style.display = 'block'; moon.style.display = 'none'; }
+                });
+            });
+        });
+
+        // Mobile Menu
+        const hamburgerBtn = document.getElementById('hamburger-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburgerBtn?.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('is-active');
+            mobileMenu?.classList.toggle('is-open');
+        });
+
+        // Category Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        const emptyNotice = document.getElementById('empty-notice');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                let visibleCount = 0;
+
+                projectCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (filter === category) {
+                        card.classList.remove('hidden');
+                        visibleCount++;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+
+                if (emptyNotice) {
+                    emptyNotice.style.display = visibleCount === 0 ? 'block' : 'none';
+                }
+            });
+        });
+
+        // Custom Cursor
+        const cursor = document.getElementById('cursor');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+        let cursorVisible = false;
+
+        document.addEventListener('mousemove', (e) => { 
+            mouseX = e.clientX; 
+            mouseY = e.clientY; 
+            if (!cursorVisible && cursor) {
+                cursor.style.opacity = '1';
+                cursorVisible = true;
+            }
+        });
+
+        function renderCursor() {
+            cursorX += (mouseX - cursorX) * 0.28;
+            cursorY += (mouseY - cursorY) * 0.28;
+            if (cursor) {
+                cursor.style.left = cursorX + 'px';
+                cursor.style.top = cursorY + 'px';
+            }
+            requestAnimationFrame(renderCursor);
+        }
+        renderCursor();
+
+        const projectMedias = document.querySelectorAll('.project-media');
+        projectMedias.forEach(media => {
+            media.addEventListener('mouseenter', () => { cursor?.classList.add('hover-project'); });
+            media.addEventListener('mouseleave', () => { cursor?.classList.remove('hover-project'); });
+        });
+    </script>
+</Layout>
+
+<style>
+    .work-layout { display: grid; grid-template-columns: 360px 1fr; width: 100%; min-height: calc(100vh - 45px); }
+    .work-sidebar { padding: 2.5rem 2rem; border-right: 1px solid var(--border-color); display: flex; flex-direction: column; position: sticky; top: 45px; height: calc(100vh - 45px); }
+    .work-title { font-size: 3.2rem; font-weight: 500; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 1.5rem; }
+    .work-description { font-size: 0.95rem; color: var(--text-muted); line-height: 1.5; font-weight: 500; margin-bottom: 3rem; }
+
+    .category-filters { display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.95rem; font-weight: 500; }
+    .filter-btn { background: none; border: none; color: var(--text-muted); text-align: left; cursor: pointer; transition: color 0.2s ease; padding: 0.2rem 0; font-family: inherit; font-size: 0.95rem; font-weight: 500; width: fit-content; }
+    .filter-btn:hover, .filter-btn.active { color: var(--text-main); }
+
+    .work-content { padding: 2.5rem 2rem 5rem 2rem; width: 100%; }
+    .projects-2grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem 2rem; width: 100%; }
+
+    .project-card { display: flex; flex-direction: column; width: 100%; transition: opacity 0.3s ease; }
+    .project-card.hidden { display: none; }
+    .project-media { width: 100%; aspect-ratio: 16 / 10; background-color: var(--card-bg); overflow: hidden; margin-bottom: 0.7rem; }
+    .project-media img { width: 100%; height: 100%; object-fit: fill; display: block; transition: transform 0.5s ease, filter 0.5s ease; }
+    .project-card:hover .project-media img { transform: scale(1.03); filter: brightness(0.95); }
+
+    .project-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem; font-weight: 500; }
+    .project-title-group { display: flex; align-items: center; gap: 0.5rem; }
+    .project-category, .project-year { color: var(--text-muted); }
+    .project-arrow { color: var(--text-muted); font-size: 0.8rem; transform: rotate(-45deg); display: inline-block; }
+
+    .empty-notice { grid-column: span 2; font-size: 1rem; color: var(--text-muted); font-weight: 500; padding: 3rem 0; display: none; }
+
+    @media (max-width: 1024px) {
+        .work-layout { display: flex; flex-direction: column; }
+        .work-sidebar { position: relative; top: 0; height: auto; border-right: none; border-bottom: 1px solid var(--border-color); padding: 2.5rem 1.5rem; }
+        .work-content { padding: 2.5rem 1.5rem; }
+        .projects-2grid { grid-template-columns: 1fr; gap: 2rem; }
+        .category-filters { flex-direction: row; gap: 1.5rem; }
+    }
+</style>
