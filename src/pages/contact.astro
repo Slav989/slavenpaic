@@ -5,7 +5,6 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Contact — Slaven Paić">
     <div class="custom-cursor" id="cursor"></div>
 
-
     <main class="portfolio-grid">
         <section class="col col-left animate-fade delay-2"></section>
 
@@ -36,7 +35,13 @@ import Layout from '../layouts/Layout.astro';
                 </div>
             </div>
 
-            <form class="contact-form" action="#" method="POST">
+            <!-- NETLIFY COMPATIBLE FORM -->
+            <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact" />
+                <p style="display:none">
+                    <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+
                 <div class="form-group">
                     <label class="form-label" for="name">Name*</label>
                     <input type="text" id="name" name="name" required placeholder="John" class="form-input">
@@ -69,21 +74,6 @@ import Layout from '../layouts/Layout.astro';
         const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
         function raf(time: number) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
-
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const htmlElement = document.documentElement;
-
-        themeToggleBtn?.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            htmlElement.setAttribute('data-theme', newTheme);
-            const sunIcon = themeToggleBtn.querySelector('.sun-icon') as HTMLElement;
-            const moonIcon = themeToggleBtn.querySelector('.moon-icon') as HTMLElement;
-            if (sunIcon && moonIcon) {
-                if (newTheme === 'dark') { sunIcon.style.display = 'none'; moonIcon.style.display = 'block'; }
-                else { sunIcon.style.display = 'block'; moonIcon.style.display = 'none'; }
-            }
-        });
 
         const cursor = document.getElementById('cursor');
         let mouseX = 0, mouseY = 0;
@@ -237,77 +227,6 @@ import Layout from '../layouts/Layout.astro';
     .delay-3 { animation-delay: 0.25s; }
     .delay-4 { animation-delay: 0.35s; }
 
-    .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background: var(--bg-color);
-        border-bottom: 1px solid var(--border-color);
-        display: grid;
-        grid-template-columns: 360px 1fr 360px;
-        align-items: center;
-        padding: 0.5rem 2rem;
-        width: 100%;
-        font-size: 0.88rem;
-        font-weight: 500;
-        transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
-
-    .header-logo { display: flex; align-items: center; }
-
-    .header-logo-img {
-        height: 22px;
-        width: auto;
-        display: block;
-        transition: filter 0.3s ease;
-    }
-
-    [data-theme="dark"] .header-logo-img { filter: invert(1); }
-
-    .header-nav {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        color: var(--text-muted);
-    }
-
-    .header-nav a:hover, .header-nav a.active { color: var(--text-main); }
-
-    .header-right {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 1.2rem;
-    }
-
-    .lang-switch {
-        display: inline-flex;
-        gap: 0.2rem;
-        color: var(--text-muted);
-        font-size: 0.82rem;
-        font-weight: 500;
-    }
-
-    .lang-switch span.active { color: var(--text-main); }
-
-    .theme-toggle-btn {
-        background: none;
-        border: 1px solid var(--border-color) !important;
-        color: var(--text-main);
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        padding: 0;
-    }
-
-    .theme-toggle-btn:hover { border-color: var(--text-main) !important; transform: scale(1.05); }
-
     .portfolio-grid {
         display: grid;
         grid-template-columns: 360px 1fr 360px;
@@ -424,8 +343,6 @@ import Layout from '../layouts/Layout.astro';
     .btn-submit:hover { opacity: 0.85; }
 
     @media (max-width: 1024px) {
-        .site-header { grid-template-columns: auto auto; padding: 0.8rem 1.5rem; }
-        .header-nav, .header-right { display: none; }
         .portfolio-grid { display: flex; flex-direction: column; }
         .col-left, .col-right { display: none; }
         .col-middle { border-right: none; padding: 2.5rem 1.5rem; }
