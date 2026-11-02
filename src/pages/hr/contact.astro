@@ -35,8 +35,7 @@ import Layout from '../../layouts/Layout.astro';
                 </div>
             </div>
 
-            <!-- NETLIFY COMPATIBLE FORM -->
-            <form class="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
                 <input type="hidden" name="form-name" value="contact" />
                 <p style="display:none">
                     <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
@@ -63,6 +62,7 @@ import Layout from '../../layouts/Layout.astro';
                 </div>
 
                 <button type="submit" class="btn-submit">Pošalji poruku</button>
+                <div id="form-status" style="display:none; font-size: 0.9rem; font-weight: 500; margin-top: 1rem;"></div>
             </form>
         </section>
 
@@ -99,6 +99,36 @@ import Layout from '../../layouts/Layout.astro';
             requestAnimationFrame(renderCursor);
         }
         renderCursor();
+
+        // AJAX SLANJE FORME
+        const contactForm = document.getElementById('contact-form') as HTMLFormElement;
+        const formStatus = document.getElementById('form-status');
+
+        contactForm?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(contactForm);
+
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData as any).toString()
+            })
+            .then(() => {
+                contactForm.reset();
+                if (formStatus) {
+                    formStatus.style.display = 'block';
+                    formStatus.style.color = '#22C55E';
+                    formStatus.textContent = 'Hvala vam! Vaša poruka je uspješno poslana.';
+                }
+            })
+            .catch(() => {
+                if (formStatus) {
+                    formStatus.style.display = 'block';
+                    formStatus.style.color = '#EF4444';
+                    formStatus.textContent = 'Nešto je pošlo po zlu. Molimo pokušajte ponovno.';
+                }
+            });
+        });
     </script>
 </Layout>
 
