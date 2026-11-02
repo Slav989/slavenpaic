@@ -62,8 +62,9 @@ import Layout from '../../layouts/Layout.astro';
                 </div>
 
                 <button type="submit" class="btn-submit">Pošalji poruku</button>
-                <div id="form-status" style="display:none; font-size: 0.9rem; font-weight: 500; margin-top: 1rem;"></div>
             </form>
+
+            <div id="form-status" style="display:none; font-size: 1.18rem; font-weight: 500; color: var(--text-main); margin-top: 1.5rem; line-height: 1.4;"></div>
         </section>
 
         <section class="col col-right animate-fade delay-4"></section>
@@ -114,17 +115,15 @@ import Layout from '../../layouts/Layout.astro';
                 body: new URLSearchParams(formData as any).toString()
             })
             .then(() => {
-                contactForm.reset();
+                contactForm.style.display = 'none';
                 if (formStatus) {
                     formStatus.style.display = 'block';
-                    formStatus.style.color = '#22C55E';
                     formStatus.textContent = 'Hvala vam! Vaša poruka je uspješno poslana.';
                 }
             })
             .catch(() => {
                 if (formStatus) {
                     formStatus.style.display = 'block';
-                    formStatus.style.color = '#EF4444';
                     formStatus.textContent = 'Nešto je pošlo po zlu. Molimo pokušajte ponovno.';
                 }
             });
