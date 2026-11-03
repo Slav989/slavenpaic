@@ -8,10 +8,16 @@ interface Props {
 }
 
 const { title, activePage = 'home' } = Astro.props;
+
+// Automatska detekcija jezika iz URL putanje
+const pathname = Astro.url.pathname;
+const currentPath = pathname.endsWith('/') && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
+const isHr = currentPath.startsWith('/hr');
+const cursorText = isHr ? 'Pogledaj Projekt' : 'View project';
 ---
 
 <!DOCTYPE html>
-<html lang="hr" data-theme="light">
+<html lang={isHr ? 'hr' : 'en'} data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,7 +34,7 @@ const { title, activePage = 'home' } = Astro.props;
   <body>
 
     <div class="custom-cursor" id="cursor">
-      <span class="custom-cursor-text">View project</span>
+      <span class="custom-cursor-text">{cursorText}</span>
     </div>
 
     <!-- HEADER COMPONENT -->
@@ -93,15 +99,10 @@ const { title, activePage = 'home' } = Astro.props;
 
         let mouseX = 0, mouseY = 0;
         let cursorX = 0, cursorY = 0;
-        let cursorVisible = false;
 
         document.addEventListener('mousemove', (e) => { 
           mouseX = e.clientX; 
           mouseY = e.clientY; 
-          if (!cursorVisible) {
-            cursor.style.opacity = '1';
-            cursorVisible = true;
-          }
         });
 
         function renderCursor() {
@@ -141,16 +142,14 @@ const { title, activePage = 'home' } = Astro.props;
 </html>
 
 <style is:global>
-  /* 1. MALI KRUG KURSORA */
+  /* 1. OBIČAN KURSOR - POTPUNO NEVIDLJIV (NEMA CRNOG/BIJELOG KRUGA) */
   .custom-cursor {
     position: fixed;
     top: 0;
     left: 0;
-    width: 12px;
-    height: 12px;
-    background-color: #FFFFFF !important;
-    mix-blend-mode: difference !important;
-    border-radius: 50% !important;
+    width: 0px;
+    height: 0px;
+    background-color: transparent !important;
     pointer-events: none;
     z-index: 9999999 !important;
     transform: translate(-50%, -50%);
@@ -162,7 +161,7 @@ const { title, activePage = 'home' } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
+    opacity: 0 !important;
   }
 
   .custom-cursor-text {
@@ -176,7 +175,7 @@ const { title, activePage = 'home' } = Astro.props;
     transition: opacity 0.2s ease !important;
   }
 
-  /* 2. HOVER GUMB PREKO PROJEKATA - UVIJEK BIJELI (#FFFFFF) S CRNIM TEKSTOM (#121212), BEZ BORDERA I NULTI RADIUS NA OBJE TEME */
+  /* 2. HOVER PREKO PROJEKATA - PRIKAZUJE SE SAMO BIJELI BUTTON S DINO-TEKSTOM */
   body .custom-cursor.hover-project,
   html .custom-cursor.hover-project,
   html[data-theme="light"] .custom-cursor.hover-project,
