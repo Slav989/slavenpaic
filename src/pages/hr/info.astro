@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import CookieBanner from '../../components/CookieBanner.astro';
 ---
 
 <Layout title="Info — Slaven Paić" activePage="info">
@@ -9,7 +10,7 @@ import Layout from '../../layouts/Layout.astro';
     <main class="portfolio-grid">
         <section class="col col-left animate-fade delay-2">
             <div>
-                <h1 class="hero-title">Više o<br>meni.</h1>
+                <h1 class="hero-title">O<br>Meni.</h1>
                 <div class="profile-photo-wrapper">
                     <img src="/sp.jpg" alt="Slaven Paić">
                 </div>
@@ -31,11 +32,11 @@ import Layout from '../../layouts/Layout.astro';
         <section class="col col-middle animate-fade delay-3">
             <div class="bio-section">
                 <p class="bio-statement">
-                    Ja sam Slaven — digitalni dizajner i developer iz Hrvatske <span class="muted">— stvaram minimalne web platforme visoke performanse i sustave vizualnog identiteta osmišljene da pretvaraju posjetitelje u klijente.</span>
+                    Ja sam Slaven — digitalni dizajner i developer iz Hrvatske <span class="muted">— stvaram minimalne, visokoizvedbene web platforme i sustave vizualnog identiteta osmišljene za konverziju posjetitelja u klijente.</span>
                 </p>
 
                 <p class="bio-process">
-                    Svaki projekt gradim s jasnom namjerom: da izgleda vrhunski, visoko se pozicionira kroz čist tehnički SEO i pretvara kvalitetne posjetitelje u upite. Radeći izravno od strategije do produkcije, kombiniram visokokontrastne mreže i brzi front-end kako bi vaša digitalna prisutnost radila maksimalno za vas.
+                    Svaki projekt građen je s jasnom namjerom: vrhunska estetika, tehnička SEO optimizacija i pretvaranje upita u suradnje. Radeći izravno od strateškog smjera do produkcije, spajam visoki kontrast grafičkih mreža s laganim kodom za maksimalnu brzinu.
                 </p>
             </div>
 
@@ -45,27 +46,27 @@ import Layout from '../../layouts/Layout.astro';
                     <div class="service-card">
                         <div class="service-text">
                             <div class="service-num-title">1. Vizualni identitet i sustavi</div>
-                            <p class="service-desc">Izrada jasnih, fleksibilnih sustava vizualnog identiteta i smjernica brenda koji osiguravaju autoritet na tržištu i daju vašem poslovanju jasan, premium smjer.</p>
+                            <p class="service-desc">Izgradnja jasnih, fleksibilnih sustava vizualnog identiteta i smjernica brenda koji osiguravaju autentičnost na tržištu.</p>
                         </div>
                         <div class="service-img">
-                            <img src="/ami-large.jpg" alt="Vizualni identitet">
+                            <img src="/ami-large.jpg">
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-text">
-                            <div class="service-num-title">2. Web dizajn, SEO i kod po mjeri</div>
-                            <p class="service-desc">Dizajn i izrada brzih, responzivnih web stranica optimiziranih za tehnički SEO, besprijekorne performanse i visoku stopu konverzije klijenata.</p>
+                            <div class="service-num-title">2. Web dizajn, SEO & Custom Code</div>
+                            <p class="service-desc">Dizajn i razvoj brzih, responzivnih web stranica optimiziranih za tehnički SEO, performanse i visok stupanj konverzije.</p>
                         </div>
                         <div class="service-img">
-                            <img src="/drew-griffiths.avif" alt="Web dizajn">
+                            <img src="/drew-griffiths.avif">
                         </div>
                     </div>
 
                     <div class="service-card">
                         <div class="service-text">
                             <div class="service-num-title">3. Urednički prijelom i priprema za tisak</div>
-                            <p class="service-desc">Oblikovanje visokokontrastnih uredničkih struktura, digitalnih publikacija i tiskanih materijala uz točnu vizualnu hijerarhiju i preciznu pripremu za tisak.</p>
+                            <p class="service-desc">Oblikovanje uredničkih struktura, digitalnih publikacija i tiskovina građenih s točnom vizualnom hijerarhijom i pripremom za tisak.</p>
                         </div>
                         <div class="service-img">
                             <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800&auto=format&fit=crop" alt="Urednički prijelom">
@@ -83,7 +84,7 @@ import Layout from '../../layouts/Layout.astro';
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-body">
-                            Specijaliziran sam za web dizajn usmjeren na konverzije, prilagođeni front-end razvoj, tehničku SEO arhitekturu, sustave vizualnog identiteta i urednički prijelom.
+                            Specijaliziran sam za web dizajn visoke konverzije, prilagođeni front-end razvoj, tehničku SEO arhitekturu, sustave vizualnog identiteta i grafički prijelom.
                         </div>
                     </div>
 
@@ -93,27 +94,27 @@ import Layout from '../../layouts/Layout.astro';
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-body">
-                            Da — radim s klijentima diljem svijeta, vodeći komunikaciju na daljinu i jednostavno se prilagođavajući različitim vremenskim zonama.
+                            Da — surađujem s klijentima diljem svijeta, vodeći komunikaciju na daljinu uz potpunu prilagodbu vremenskim zonama.
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <button class="faq-header">
-                            <span>Kako započinje novi projekt?</span>
+                            <span>Kako započinje nova suradnja?</span>
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-body">
-                            Započinjemo kratkim uvodnim pozivom kako bismo definirali vaše poslovne ciljeve i SEO strategiju. Nakon toga pripremam izravan prijedlog s jasnim opsegom, isporukama i vremenskim okvirom.
+                            Započinjemo kratkim uvodnim pozivom radi definiranja ciljeva. Nakon toga pripremam izravan prijedlog s jasnim opsegom posla, rokovima i cijenom.
                         </div>
                     </div>
 
                     <div class="faq-item">
                         <button class="faq-header">
-                            <span>Koji je uobičajeni vremenski okvir za projekt?</span>
+                            <span>Koliko traje izrada projekta?</span>
                             <span class="faq-icon">+</span>
                         </button>
                         <div class="faq-body">
-                            Vremenski okviri ovise o složenosti. Izrada web stranice po mjeri, SEO postavke i produkcija obično traju između 3 i 6 tjedana od početka do lansiranja.
+                            Rokovi ovise o složenosti. Prilagođene web stranice uz SEO postavke i izradu u pravilu traju između 3 i 6 tjedana od početka do objave.
                         </div>
                     </div>
                 </div>
@@ -133,8 +134,8 @@ import Layout from '../../layouts/Layout.astro';
                         <span>7+ godina</span>
                     </div>
                     <div class="stat-row">
-                        <span class="muted">Specijalnost</span>
-                        <span>Prilagođeni Web & SEO</span>
+                        <span class="muted">Specijalizacija</span>
+                        <span>Web & SEO</span>
                     </div>
                     <div class="stat-row">
                         <span class="muted">Studio</span>
@@ -152,6 +153,8 @@ import Layout from '../../layouts/Layout.astro';
             </div>
         </section>
     </main>
+
+    <CookieBanner />
 
     <script>
         const yearEl = document.getElementById('year');
@@ -172,7 +175,7 @@ import Layout from '../../layouts/Layout.astro';
 <style is:global>
     @font-face {
         font-family: 'General Sans';
-        src: url('/fonts/GeneralSans-Medium.woff2') format('woff2');
+        src: url('GeneralSans-Medium.woff2') format('woff2');
         font-weight: 400 500;
         font-style: normal;
         font-display: swap;
@@ -180,7 +183,7 @@ import Layout from '../../layouts/Layout.astro';
 
     @font-face {
         font-family: 'General Sans';
-        src: url('/fonts/GeneralSans-Bold.woff2') format('woff2');
+        src: url('GeneralSans-Bold.woff2') format('woff2');
         font-weight: 700;
         font-style: normal;
         font-display: swap;

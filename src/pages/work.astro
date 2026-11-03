@@ -1,33 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 ---
 
 <Layout title="Work — Slaven Paić">
+
     <div class="custom-cursor" id="cursor">
         <span class="custom-cursor-text">View project</span>
-    </div>
-
-    <!-- MOBILE OVERLAY MENU -->
-    <div class="mobile-menu-overlay" id="mobile-menu">
-        <nav class="mobile-nav-links">
-            <a href="/">Home,</a>
-            <a href="/info">Info,</a>
-            <a href="/work" class="active">Work,</a>
-            <a href="/contact">Contact</a>
-        </nav>
-
-        <div class="mobile-menu-bottom">
-            <div class="mobile-controls-row">
-                <div class="lang-switch">
-                    <span class="active">EN</span> / <span>HR</span>
-                </div>
-                <button class="theme-toggle-btn theme-toggle-trigger" aria-label="Preklopi temu">
-                    <svg class="theme-icon sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle></svg>
-                    <svg class="theme-icon moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                </button>
-            </div>
-            <a href="https://calendly.com/sp-studio/30-minute-discovery-call" target="_blank" rel="noopener" class="link-underline" style="align-self: flex-start; font-size: 1.1rem; font-weight: 500;">Book a Call →</a>
-        </div>
     </div>
 
     <!-- MAIN WORK LAYOUT -->
@@ -35,12 +15,12 @@ import Layout from '../layouts/Layout.astro';
         <aside class="work-sidebar">
             <h1 class="work-title">Work.</h1>
             <p class="work-description">
-                A selection of custom web architecture, visual identities, and editorial platforms built with strategic intention, high contrast, and clean front-end execution.
+                A selection of custom web architectures, visual identity systems, and editorial platforms built with strategic intent, high contrast, and clean front-end execution.
             </p>
 
             <div class="category-filters">
                 <button class="filter-btn active" data-filter="web">Web Design & Branding</button>
-                <button class="filter-btn" data-filter="book">Book Cover Design</button>
+                <button class="filter-btn" data-filter="book">Book Covers</button>
             </div>
         </aside>
 
@@ -50,7 +30,7 @@ import Layout from '../layouts/Layout.astro';
                 <a href="https://dezman.hr/en" target="_blank" rel="noopener" class="project-card" data-category="web">
                     <div class="project-media"><img src="/dezman.jpeg" alt="Dežman Bar"></div>
                     <div class="project-meta">
-                        <div class="project-title-group"><span>Dežman Bar</span><span class="project-arrow">→</span><span class="project-category">Restaurant/Bar</span></div>
+                        <div class="project-title-group"><span>Dežman Bar</span><span class="project-arrow">→</span><span class="project-category">Restaurant / Bar</span></div>
                         <span class="project-year">'26</span>
                     </div>
                 </a>
@@ -58,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
                 <a href="https://drewgriffithsart.com" target="_blank" rel="noopener" class="project-card" data-category="web">
                     <div class="project-media"><img src="/drew-griffiths.avif" alt="Drew Griffiths Art"></div>
                     <div class="project-meta">
-                        <div class="project-title-group"><span>Drew Griffiths Art</span><span class="project-arrow">→</span><span class="project-category">Visual Identity Artist Portfolio</span></div>
+                        <div class="project-title-group"><span>Drew Griffiths Art</span><span class="project-arrow">→</span><span class="project-category">Visual Identity & Portfolio</span></div>
                         <span class="project-year">'26</span>
                     </div>
                 </a>
@@ -127,62 +107,21 @@ import Layout from '../layouts/Layout.astro';
                     </div>
                 </a>
 
-                <a href="https://fortituderecruitment.com/en" target="_blank" rel="noopener" class="project-card" data-category="web">
-                    <div class="project-media"><img src="/fortitude.jpeg" alt="Fortitude Recruitment"></div>
-                    <div class="project-meta">
-                        <div class="project-title-group"><span>Fortitude Recruitment</span><span class="project-arrow">→</span><span class="project-category">Recruitment Company Website</span></div>
-                        <span class="project-year">'26</span>
-                    </div>
-                </a>
-
-                <a href="https://theplagijators.com/en" target="_blank" rel="noopener" class="project-card" data-category="web">
-                    <div class="project-media"><img src="/plagijators.avif" alt="The Plagijators"></div>
-                    <div class="project-meta">
-                        <div class="project-title-group"><span>The Plagijators</span><span class="project-arrow">→</span><span class="project-category">Rock Band Portfolio</span></div>
-                        <span class="project-year">'26</span>
-                    </div>
-                </a>
-
                 <div class="empty-notice" id="empty-notice">
-                    No book cover design projects uploaded yet.
+                    No book cover design projects loaded yet.
                 </div>
 
             </div>
         </section>
     </main>
 
+    <CookieBanner />
+
     <script>
         import Lenis from 'lenis';
         const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
-        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        function raf(time: number) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
-
-        // Theme Toggle
-        const themeTriggers = document.querySelectorAll('.theme-toggle-trigger');
-        const htmlElement = document.documentElement;
-
-        themeTriggers.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const currentTheme = htmlElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                htmlElement.setAttribute('data-theme', newTheme);
-                themeTriggers.forEach(tBtn => {
-                    const sun = tBtn.querySelector('.sun-icon');
-                    const moon = tBtn.querySelector('.moon-icon');
-                    if (newTheme === 'dark') { sun.style.display = 'none'; moon.style.display = 'block'; } 
-                    else { sun.style.display = 'block'; moon.style.display = 'none'; }
-                });
-            });
-        });
-
-        // Mobile Menu
-        const hamburgerBtn = document.getElementById('hamburger-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        hamburgerBtn?.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('is-active');
-            mobileMenu?.classList.toggle('is-open');
-        });
 
         // Category Filtering
         const filterBtns = document.querySelectorAll('.filter-btn');
@@ -247,7 +186,7 @@ import Layout from '../layouts/Layout.astro';
     </script>
 </Layout>
 
-<style>
+<style is:global>
     .work-layout { display: grid; grid-template-columns: 360px 1fr; width: 100%; min-height: calc(100vh - 45px); }
     .work-sidebar { padding: 2.5rem 2rem; border-right: 1px solid var(--border-color); display: flex; flex-direction: column; position: sticky; top: 45px; height: calc(100vh - 45px); }
     .work-title { font-size: 3.2rem; font-weight: 500; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 1.5rem; }
@@ -263,7 +202,7 @@ import Layout from '../layouts/Layout.astro';
     .project-card { display: flex; flex-direction: column; width: 100%; transition: opacity 0.3s ease; }
     .project-card.hidden { display: none; }
     .project-media { width: 100%; aspect-ratio: 16 / 10; background-color: var(--card-bg); overflow: hidden; margin-bottom: 0.7rem; }
-    .project-media img { width: 100%; height: 100%; object-fit: fill; display: block; transition: transform 0.5s ease, filter 0.5s ease; }
+    .project-media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease, filter 0.5s ease; }
     .project-card:hover .project-media img { transform: scale(1.03); filter: brightness(0.95); }
 
     .project-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem; font-weight: 500; }
@@ -273,11 +212,42 @@ import Layout from '../layouts/Layout.astro';
 
     .empty-notice { grid-column: span 2; font-size: 1rem; color: var(--text-muted); font-weight: 500; padding: 3rem 0; display: none; }
 
+    /* ČETVRTASTI CURSOR BUTTON */
+    .custom-cursor { 
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        width: 12px; 
+        height: 12px; 
+        background-color: var(--text-main); 
+        border-radius: 50%; 
+        pointer-events: none; 
+        z-index: 9999; 
+        transform: translate(-50%, -50%); 
+        will-change: transform, width, height, border-radius, padding; 
+        transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1), height 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.3s ease, padding 0.3s ease, opacity 0.2s ease; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        opacity: 0; 
+    }
+    .custom-cursor-text { font-size: 0.8rem; font-weight: 500; color: var(--bg-color); opacity: 0; white-space: nowrap; transition: opacity 0.2s ease; user-select: none; }
+    
+    .custom-cursor.hover-project { 
+        width: auto !important; 
+        height: auto !important; 
+        padding: 12px 40px !important; 
+        border-radius: 4px !important; 
+        background-color: var(--text-main) !important; 
+    }
+    .custom-cursor.hover-project .custom-cursor-text { opacity: 1 !important; }
+
     @media (max-width: 1024px) {
         .work-layout { display: flex; flex-direction: column; }
-        .work-sidebar { position: relative; top: 0; height: auto; border-right: none; border-bottom: 1px solid var(--border-color); padding: 2.5rem 1.5rem; }
-        .work-content { padding: 2.5rem 1.5rem; }
+        .work-sidebar { position: relative; top: 0; height: auto; border-right: none; border-bottom: 1px solid var(--border-color); padding: 2.5rem 1.5rem !important; }
+        .work-content { padding: 2.5rem 1.5rem !important; }
         .projects-2grid { grid-template-columns: 1fr; gap: 2rem; }
         .category-filters { flex-direction: row; gap: 1.5rem; }
+        .custom-cursor { display: none; }
     }
 </style>

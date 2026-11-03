@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 ---
 
 <Layout title="Info — Slaven Paić" activePage="info">
@@ -48,7 +49,7 @@ import Layout from '../layouts/Layout.astro';
                             <p class="service-desc">Building clear, flexible visual identity systems and brand guidelines that establish market authority and give your business a distinct, premium direction.</p>
                         </div>
                         <div class="service-img">
-                            <img src="/ami-large.jpg">
+                            <img src="/ami-large.jpg" alt="Visual Identity">
                         </div>
                     </div>
 
@@ -58,7 +59,7 @@ import Layout from '../layouts/Layout.astro';
                             <p class="service-desc">Designing and building fast, responsive custom websites engineered for technical SEO, flawless performance, and high client conversion rates.</p>
                         </div>
                         <div class="service-img">
-                            <img src="/drew-griffiths.avif">
+                            <img src="/drew-griffiths.avif" alt="Web Design">
                         </div>
                     </div>
 
@@ -153,6 +154,8 @@ import Layout from '../layouts/Layout.astro';
         </section>
     </main>
 
+    <CookieBanner />
+
     <script>
         const yearEl = document.getElementById('year');
         if (yearEl) yearEl.textContent = new Date().getFullYear().toString();
@@ -172,7 +175,7 @@ import Layout from '../layouts/Layout.astro';
 <style is:global>
     @font-face {
         font-family: 'General Sans';
-        src: url('GeneralSans-Medium.woff2') format('woff2');
+        src: url('/fonts/GeneralSans-Medium.woff2') format('woff2');
         font-weight: 400 500;
         font-style: normal;
         font-display: swap;
@@ -180,7 +183,7 @@ import Layout from '../layouts/Layout.astro';
 
     @font-face {
         font-family: 'General Sans';
-        src: url('GeneralSans-Bold.woff2') format('woff2');
+        src: url('/fonts/GeneralSans-Bold.woff2') format('woff2');
         font-weight: 700;
         font-style: normal;
         font-display: swap;
@@ -266,17 +269,14 @@ import Layout from '../layouts/Layout.astro';
         left: 0;
         width: 12px;
         height: 12px;
-        background-color: #FFFFFF;
+        background-color: #FFFFFF !important;
+        mix-blend-mode: difference !important;
         border-radius: 50%;
         pointer-events: none;
         z-index: 9999;
-        mix-blend-mode: difference;
         transform: translate(-50%, -50%);
-        will-change: transform, width, height;
-        transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1), height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        will-change: transform, left, top;
+        transition: opacity 0.2s ease;
         opacity: 0;
     }
 
@@ -440,7 +440,7 @@ import Layout from '../layouts/Layout.astro';
     .service-img img {
         width: 100%;
         height: 100%;
-        object-fit: fill;
+        object-fit: cover;
         display: block;
     }
 

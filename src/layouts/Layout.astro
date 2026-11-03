@@ -16,8 +16,8 @@ const { title, activePage = 'home' } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- FAVICON (Pazi da je favicon.svg ili favicon.ico u public/ mapi) -->
-   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=3" />
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=3" />
     
     <!-- ZABRANA SEO INDEKSIRANJA -->
     <meta name="robots" content="noindex, nofollow" />
@@ -86,9 +86,11 @@ const { title, activePage = 'home' } = Astro.props;
         });
       }
 
-      // Custom Cursor
-      const cursor = document.getElementById('cursor');
-      if (cursor) {
+      // Custom Cursor Logic
+      function initCursor() {
+        const cursor = document.getElementById('cursor');
+        if (!cursor) return;
+
         let mouseX = 0, mouseY = 0;
         let cursorX = 0, cursorY = 0;
         let cursorVisible = false;
@@ -111,12 +113,98 @@ const { title, activePage = 'home' } = Astro.props;
         }
         renderCursor();
 
-        const projectMedias = document.querySelectorAll('.project-media');
-        projectMedias.forEach(media => {
-          media.addEventListener('mouseenter', () => { cursor.classList.add('hover-project'); });
-          media.addEventListener('mouseleave', () => { cursor.classList.remove('hover-project'); });
+        const projectSelectors = '.project-media, .project-card, .project-item, .work-item, .work-card, a[href*="/work/"]';
+
+        document.addEventListener('mouseover', (e) => {
+          const target = e.target as HTMLElement;
+          if (target && target.closest(projectSelectors)) {
+            cursor.classList.add('hover-project');
+          }
+        });
+
+        document.addEventListener('mouseout', (e) => {
+          const target = e.target as HTMLElement;
+          if (target && target.closest(projectSelectors)) {
+            cursor.classList.remove('hover-project');
+          }
         });
       }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCursor);
+      } else {
+        initCursor();
+      }
+      document.addEventListener('astro:page-load', initCursor);
     </script>
   </body>
 </html>
+
+<style is:global>
+  /* 1. MALI KRUG KURSORA */
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    background-color: #FFFFFF !important;
+    mix-blend-mode: difference !important;
+    border-radius: 50% !important;
+    pointer-events: none;
+    z-index: 9999999 !important;
+    transform: translate(-50%, -50%);
+    will-change: transform, left, top, width, height;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                height 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                padding 0.3s ease, 
+                opacity 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+  }
+
+  .custom-cursor-text {
+    display: block !important;
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    user-select: none !important;
+    opacity: 0 !important;
+    transition: opacity 0.2s ease !important;
+  }
+
+  /* 2. HOVER GUMB PREKO PROJEKATA - UVIJEK BIJELI (#FFFFFF) S CRNIM TEKSTOM (#121212), BEZ BORDERA I NULTI RADIUS NA OBJE TEME */
+  body .custom-cursor.hover-project,
+  html .custom-cursor.hover-project,
+  html[data-theme="light"] .custom-cursor.hover-project,
+  html[data-theme="dark"] .custom-cursor.hover-project {
+    width: auto !important;
+    height: auto !important;
+    padding: 12px 28px !important;
+    border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
+    border: 0px none transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+    mix-blend-mode: normal !important;
+    background-color: #FFFFFF !important;
+    opacity: 1 !important;
+  }
+
+  body .custom-cursor.hover-project .custom-cursor-text,
+  html .custom-cursor.hover-project .custom-cursor-text,
+  html[data-theme="light"] .custom-cursor.hover-project .custom-cursor-text,
+  html[data-theme="dark"] .custom-cursor.hover-project .custom-cursor-text {
+    opacity: 1 !important;
+    color: #121212 !important;
+  }
+
+  @media (max-width: 1024px) {
+    .custom-cursor {
+      display: none !important;
+    }
+  }
+</style>

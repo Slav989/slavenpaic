@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+---
+
+<Layout title="Privacy Policy — Slaven Paić">
+
+    <main class="legal-layout animate-fade delay-2">
+        <div class="legal-container">
+            <h1 class="legal-title">Privacy Policy</h1>
+            <p class="legal-date">Last updated: November 2026</p>
+
+            <div class="legal-content">
+                <section class="legal-section">
+                    <h2>1. Data Controller</h2>
+                    <p>SP Studio®Design ("we", "our", "us") respects your privacy and is committed to protecting your personal data during and after your visit to this website (sp-studio.design). In this sense, SP Studio®Design acts as a data controller ("Data Controller"). This Privacy Policy provides insight into our practices regarding the collection, use, and storage of information through this Site.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>2. Types of Data Processed</h2>
+                    <p>Through the Site, we collect and store minimal personal data necessary to deliver high-quality web design and development services:</p>
+                    <ul>
+                        <li><strong>Contact Information:</strong> Name, email address, phone number, and message content voluntarily provided via our contact form or direct email.</li>
+                        <li><strong>Technical Data & Cookies:</strong> IP address, browser type, device details, and interaction data collected through essential or analytical cookies for site optimization.</li>
+                    </ul>
+                </section>
+
+                <section class="legal-section">
+                    <h2>3. Purposes and Legal Basis of Processing</h2>
+                    <p>When you provide your Personal Information on the Site, we limit its use strictly to legitimate business purposes in accordance with this Privacy Policy:</p>
+                    <ul>
+                        <li>Responding to inquiry requests, sending proposals, and scheduling discovery calls.</li>
+                        <li>Executing web development projects, contractual commitments, and invoicing.</li>
+                        <li>Investigating or preventing fraud, threats, or security breaches.</li>
+                        <li>Compliance with legal obligations to which this website is subject.</li>
+                    </ul>
+                </section>
+
+                <section class="legal-section">
+                    <h2>4. Recipients</h2>
+                    <p>Your Personal Data is never sold or unauthorizedly shared. It may be disclosed only to trusted service providers acting as data processors (e.g. hosting servers, email delivery infrastructure, and technical analytics tools), authorized studio personnel subject to confidentiality, and law enforcement agencies when required by applicable law.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>5. Transfer of Personal Data to Third Countries</h2>
+                    <p>Transfers of personal data outside the EU / EEA are conducted only when strictly necessary for technical service operation and subject to appropriate safeguards in compliance with applicable data protection regulations (GDPR).</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>6. Retention</h2>
+                    <p>We will only retain your Personal Data for as long as necessary to achieve the collection purposes or as required by applicable laws and document retention regulations.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>7. Your Rights</h2>
+                    <p>In accordance with applicable law (GDPR), you have the right to request access to, correction, or deletion of your Personal Data, restriction of processing, data portability, and the right to lodge a complaint with a supervisory authority.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>8. Links to Other Sites</h2>
+                    <p>The Site may contain links to external third-party websites or social networks not owned or controlled by SP Studio®Design. We encourage you to read the privacy statements of each external site you visit.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>9. Protection of Children's Privacy</h2>
+                    <p>This Site is not directed to individuals under the age of sixteen (16), and we do not knowingly collect personal data from minors without parental or guardian consent.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>10. Security Practices</h2>
+                    <p>We implement appropriate technical and organizational measures to safeguard the information we collect against unauthorized access, disclosure, or alteration.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>11. Governing Law & Jurisdiction</h2>
+                    <p>For all matters relating to this Site and this Privacy Policy, the law of the Republic of Croatia shall apply, with exclusive jurisdiction in the competent Croatian courts.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>12. Terms of Use & Copyright</h2>
+                    <p>All content published on this website (site design, texts, code assets, visual work, and case studies) is protected by copyright. Unauthorized use, reproduction, or distribution without explicit prior written consent is strictly prohibited and subject to legal action.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>13. Cookies Policy</h2>
+                    <p>In order for the website to work properly and to continuously improve your browsing experience, a minimal amount of information (cookies) is stored on your device. By using this website, you agree to the use of cookies. Disabling cookies allows you to continue browsing, though certain interactive features may become restricted.</p>
+
+                    <ul>
+                        <li><strong>What is a cookie?</strong> A cookie is a small piece of data saved on your device when visiting a website, enabling the site to remember your preferences and settings.</li>
+                        <li><strong>Session Cookies:</strong> Temporary cookies automatically deleted when closing your browser.</li>
+                        <li><strong>Persistent Cookies:</strong> Remain stored on your device until expired or manually cleared, helping remember return settings.</li>
+                        <li><strong>First & Third-party Cookies:</strong> First-party cookies are set directly by this site; third-party cookies originate from integrated external tools (e.g. site analytics).</li>
+                    </ul>
+                </section>
+
+                <section class="legal-section">
+                    <h2>14. Contact Information</h2>
+                    <p>If you have any questions or comments regarding this Privacy Policy, please reach out directly via email: <a href="mailto:slaven@sp-studio.design" class="link-underline">slaven@sp-studio.design</a>.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <CookieBanner />
+</Layout>
+
+<style is:global>
+    .legal-layout { width: 100%; min-height: calc(100vh - 45px); padding: 4rem 2rem 6rem 2rem; display: flex; justify-content: center; }
+    .legal-container { max-width: 720px; width: 100%; }
+    .legal-title { font-size: 3rem; font-weight: 500; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+    .legal-date { font-size: 0.88rem; color: var(--text-muted); font-weight: 500; margin-bottom: 3.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem; }
+
+    .legal-content { display: flex; flex-direction: column; gap: 2.5rem; line-height: 1.6; }
+    .legal-section h2 { font-size: 1.25rem; font-weight: 500; margin-bottom: 0.8rem; color: var(--text-main); }
+    .legal-section p, .legal-section ul { font-size: 0.95rem; font-weight: 500; color: var(--text-muted); }
+    .legal-section ul { margin-top: 0.5rem; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.4rem; }
+
+    @media (max-width: 1024px) {
+        .legal-layout { padding: 2.5rem 1.5rem 4rem 1.5rem; }
+    }
+</style>

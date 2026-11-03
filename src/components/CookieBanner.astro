@@ -1,0 +1,385 @@
+---
+const pathname = Astro.url.pathname;
+const isHr = pathname.startsWith('/hr');
+const privacyUrl = isHr ? '/hr/privacy-policy' : '/privacy-policy';
+---
+
+<div id="sp-cookie-banner" class="sp-cookie-container">
+  <div class="sp-cookie-content">
+    <h3 class="sp-cookie-title">{isHr ? 'Kolačići' : 'We use cookies'}</h3>
+    <p class="sp-cookie-text">
+      {isHr ? 'Koristimo kolačiće kako bismo osigurali besprijekorno korisničko iskustvo i analizirali promet. Pogledajte ' : 'We use cookies on our site to enhance your user experience and analyze our traffic. See our '}
+      <a href={privacyUrl} target="_blank" class="sp-cookie-link">{isHr ? 'Pravila privatnosti' : 'Privacy Policy'}</a><span class="sp-dot">.</span>
+    </p>
+    <div class="sp-cookie-buttons">
+      <button id="sp-cookie-accept-all" class="sp-btn-primary">{isHr ? 'Prihvati sve' : 'Accept All'}</button>
+      <button id="sp-cookie-necessary" class="sp-btn-secondary">{isHr ? 'Samo nužni' : 'Necessary Only'}</button>
+      <button id="sp-cookie-settings" class="sp-btn-secondary">{isHr ? 'Postavke' : 'Settings'}</button>
+    </div>
+  </div>
+</div>
+
+<div id="sp-cookie-modal" class="sp-modal-overlay">
+  <div class="sp-modal-box">
+    <div class="sp-modal-header">
+      <h3>{isHr ? 'Postavke kolačića' : 'Cookie Settings'}</h3>
+      <button id="sp-close-modal" class="sp-modal-close">&times;</button>
+    </div>
+    <div class="sp-modal-body">
+      <p class="sp-modal-desc">
+        {isHr ? 'Prilagodite postavke kolačića. Nužni kolačići su neophodni za rad web stranice.' : 'Customize your cookie preferences. Essential cookies are required for the website to function properly.'}
+      </p>
+      
+      <div class="sp-switcher-row">
+        <div class="sp-switcher-info">
+          <h4>{isHr ? 'Nužni kolačići' : 'Essential Cookies'}</h4>
+          <p>{isHr ? 'Potrebni za osnovnu funkcionalnost stranice. Ne mogu se isključiti.' : 'Required for basic website functionality. Cannot be disabled.'}</p>
+        </div>
+        <label class="sp-switch checked-disabled">
+          <input type="checkbox" id="cookie-essential" checked disabled />
+          <span class="sp-slider"></span>
+        </label>
+      </div>
+
+      <div class="sp-switcher-row">
+        <div class="sp-switcher-info">
+          <h4>{isHr ? 'Analitika & Performanse' : 'Analytics & Performance'}</h4>
+          <p>{isHr ? 'Pomažu nam razumjeti kako posjetitelji interagiraju sa sadržajem.' : 'Help us understand how visitors interact with our content anonymously.'}</p>
+        </div>
+        <label class="sp-switch">
+          <input type="checkbox" id="cookie-analytics" />
+          <span class="sp-slider"></span>
+        </label>
+      </div>
+
+      <div class="sp-switcher-row">
+        <div class="sp-switcher-info">
+          <h4>{isHr ? 'Marketing & Sadržaj' : 'Marketing & Content'}</h4>
+          <p>{isHr ? 'Koriste se za pružanje relevantnih preporuka i prezentaciju radova.' : 'Used to deliver relevant recommendations and portfolio highlights.'}</p>
+        </div>
+        <label class="sp-switch">
+          <input type="checkbox" id="cookie-marketing" />
+          <span class="sp-slider"></span>
+        </label>
+      </div>
+    </div>
+    <div class="sp-modal-footer">
+      <button id="sp-save-preferences" class="sp-btn-primary full-width">{isHr ? 'Spremi postavke' : 'Save Preferences'}</button>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  /* INVERTOVANE BOJE ZA COOKIE BANNER */
+  :root {
+    --sp-cookie-bg: #121212;
+    --sp-cookie-text: #FFFFFF;
+    --sp-cookie-muted: #A0A0A0;
+    --sp-cookie-border: #2A2A2A;
+    --sp-cookie-btn-primary-bg: #FFFFFF;
+    --sp-cookie-btn-primary-text: #121212;
+    --sp-cookie-btn-secondary-border: #333333;
+  }
+
+  [data-theme="dark"] {
+    --sp-cookie-bg: #FFFFFF;
+    --sp-cookie-text: #121212;
+    --sp-cookie-muted: #666666;
+    --sp-cookie-border: #E5E5E5;
+    --sp-cookie-btn-primary-bg: #121212;
+    --sp-cookie-btn-primary-text: #FFFFFF;
+    --sp-cookie-btn-secondary-border: #CCCCCC;
+  }
+
+  .sp-cookie-container {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    left: auto !important;
+    width: calc(100% - 60px) !important;
+    max-width: 420px !important;
+    background: var(--sp-cookie-bg) !important;
+    border: 1px solid var(--sp-cookie-border) !important;
+    border-radius: 4px !important;
+    padding: 22px !important;
+    z-index: 999995 !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+    transform: translateY(180%) !important;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  .sp-cookie-container.is-visible {
+    transform: translateY(0) !important;
+  }
+
+  .sp-cookie-content {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+  }
+
+  .sp-cookie-title {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: var(--sp-cookie-text) !important;
+    margin: 0 !important;
+  }
+
+  .sp-cookie-text {
+    font-weight: 500 !important;
+    font-size: 12.5px !important;
+    line-height: 1.5 !important;
+    color: var(--sp-cookie-muted) !important;
+    margin: 0 !important;
+  }
+
+  .sp-cookie-link {
+    color: var(--sp-cookie-text) !important;
+    text-decoration: underline !important;
+  }
+
+  .sp-dot {
+    color: var(--sp-cookie-text) !important;
+    font-weight: 700 !important;
+  }
+
+  .sp-cookie-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 6px !important;
+  }
+
+  .sp-btn-primary, .sp-btn-secondary {
+    font-family: inherit !important;
+    flex: 1 !important;
+    border-radius: 2px !important;
+    cursor: pointer !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    padding: 9px 6px !important;
+    font-size: 11px !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+
+  .sp-btn-primary {
+    background-color: var(--sp-cookie-btn-primary-bg) !important;
+    color: var(--sp-cookie-btn-primary-text) !important;
+    border: 1px solid var(--sp-cookie-btn-primary-bg) !important;
+  }
+
+  .sp-btn-primary:hover {
+    opacity: 0.88 !important;
+  }
+
+  .sp-btn-secondary {
+    background: transparent !important;
+    color: var(--sp-cookie-text) !important;
+    border: 1px solid var(--sp-cookie-btn-secondary-border) !important;
+  }
+
+  .sp-btn-secondary:hover {
+    border-color: var(--sp-cookie-text) !important;
+  }
+
+  .full-width { width: 100% !important; }
+
+  .sp-modal-overlay {
+    position: fixed !important;
+    top: 0 !important; left: 0 !important;
+    width: 100% !important; height: 100vh !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    z-index: 999996 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.3s ease !important;
+  }
+
+  .sp-modal-overlay.is-open {
+    opacity: 1 !important;
+    pointer-events: all !important;
+  }
+
+  .sp-modal-box {
+    background: var(--sp-cookie-bg) !important;
+    border: 1px solid var(--sp-cookie-border) !important;
+    width: calc(100% - 40px) !important;
+    max-width: 460px !important;
+    border-radius: 4px !important;
+    padding: 24px !important;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4) !important;
+    transform: translateY(15px) !important;
+    transition: transform 0.3s ease !important;
+  }
+
+  .sp-modal-overlay.is-open .sp-modal-box { transform: translateY(0) !important; }
+
+  .sp-modal-header { 
+    display: flex !important; 
+    justify-content: space-between !important; 
+    align-items: center !important; 
+    margin-bottom: 14px !important; 
+    border-bottom: 1px solid var(--sp-cookie-border) !important;
+    padding-bottom: 10px !important;
+  }
+
+  .sp-modal-header h3 { 
+    color: var(--sp-cookie-text) !important; 
+    font-size: 16px !important; 
+    font-weight: 500 !important; 
+    margin: 0 !important;
+  }
+
+  .sp-modal-close { 
+    background: none !important; 
+    border: none !important; 
+    color: var(--sp-cookie-muted) !important; 
+    font-size: 22px !important; 
+    cursor: pointer !important; 
+    line-height: 1 !important;
+  }
+
+  .sp-modal-close:hover { color: var(--sp-cookie-text) !important; }
+
+  .sp-modal-desc { 
+    font-weight: 500 !important;
+    font-size: 12.5px !important; 
+    color: var(--sp-cookie-muted) !important; 
+    line-height: 1.5 !important; 
+    margin-bottom: 16px !important; 
+  }
+
+  .sp-switcher-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 12px 0 !important;
+    border-top: 1px solid var(--sp-cookie-border) !important;
+    gap: 16px !important;
+  }
+
+  .sp-switcher-info h4 { 
+    color: var(--sp-cookie-text) !important; 
+    font-size: 13.5px !important; 
+    font-weight: 500 !important; 
+    margin-bottom: 2px !important; 
+  }
+
+  .sp-switcher-info p { 
+    font-weight: 500 !important;
+    color: var(--sp-cookie-muted) !important; 
+    font-size: 11.5px !important; 
+    line-height: 1.4 !important; 
+    margin: 0 !important;
+  }
+
+  .sp-switch { 
+    position: relative !important; 
+    display: inline-block !important; 
+    width: 40px !important; 
+    height: 20px !important; 
+    flex-shrink: 0 !important; 
+  }
+
+  .sp-switch input { opacity: 0 !important; width: 0 !important; height: 0 !important; }
+
+  .sp-slider { 
+    position: absolute !important; 
+    cursor: pointer !important; 
+    top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; 
+    background-color: var(--sp-cookie-btn-secondary-border) !important; 
+    transition: .3s ease !important; 
+    border-radius: 20px !important; 
+  }
+
+  .sp-slider:before { 
+    position: absolute !important; 
+    content: "" !important; 
+    height: 14px !important; 
+    width: 14px !important; 
+    left: 3px !important; 
+    bottom: 3px !important; 
+    background-color: var(--sp-cookie-text) !important; 
+    transition: .3s ease !important; 
+    border-radius: 50% !important; 
+  }
+
+  input:checked + .sp-slider { background-color: var(--sp-cookie-text) !important; }
+  input:checked + .sp-slider:before { transform: translateX(20px) !important; background-color: var(--sp-cookie-bg) !important; }
+
+  .checked-disabled .sp-slider { opacity: 0.6 !important; cursor: not-allowed !important; }
+
+  @media (max-width: 768px) {
+    .sp-cookie-container { bottom: 15px !important; right: 15px !important; width: calc(100% - 30px) !important; padding: 16px !important; }
+  }
+</style>
+
+<script is:inline>
+  (function() {
+    function initCookieBanner() {
+      const banner = document.getElementById('sp-cookie-banner');
+      const modal = document.getElementById('sp-cookie-modal');
+      const btnAcceptAll = document.getElementById('sp-cookie-accept-all');
+      const btnNecessary = document.getElementById('sp-cookie-necessary');
+      const btnSettings = document.getElementById('sp-cookie-settings');
+      const btnCloseModal = document.getElementById('sp-close-modal');
+      const btnSavePrefs = document.getElementById('sp-save-preferences');
+      
+      const chkAnalytics = document.getElementById('cookie-analytics');
+      const chkMarketing = document.getElementById('cookie-marketing');
+
+      const savedConsent = localStorage.getItem('sp_cookie_consent');
+
+      if (!savedConsent && banner) {
+        setTimeout(() => { banner.classList.add('is-visible'); }, 2000);
+      }
+
+      if (btnAcceptAll) {
+        btnAcceptAll.onclick = function() {
+          localStorage.setItem('sp_cookie_consent', JSON.stringify({ essential: true, analytics: true, marketing: true }));
+          if (banner) banner.classList.remove('is-visible');
+        };
+      }
+
+      if (btnNecessary) {
+        btnNecessary.onclick = function() {
+          localStorage.setItem('sp_cookie_consent', JSON.stringify({ essential: true, analytics: false, marketing: false }));
+          if (banner) banner.classList.remove('is-visible');
+        };
+      }
+
+      if (btnSettings) {
+        btnSettings.onclick = function() { if (modal) modal.classList.add('is-open'); };
+      }
+
+      if (btnCloseModal) {
+        btnCloseModal.onclick = function() { if (modal) modal.classList.remove('is-open'); };
+      }
+
+      if (btnSavePrefs) {
+        btnSavePrefs.onclick = function() {
+          localStorage.setItem('sp_cookie_consent', JSON.stringify({
+            essential: true,
+            analytics: chkAnalytics ? chkAnalytics.checked : false,
+            marketing: chkMarketing ? chkMarketing.checked : false
+          }));
+          if (modal) modal.classList.remove('is-open');
+          if (banner) banner.classList.remove('is-visible');
+        };
+      }
+    }
+
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initCookieBanner); } 
+    else { initCookieBanner(); }
+    document.addEventListener('astro:page-load', initCookieBanner);
+  })();
+</script>
